@@ -1,1 +1,3 @@
 # state_legislatures
+
+This project analyzes the relationship between the percentage of a state's population that lives in the capital city and the quality of that state's government. To run the project, simply open the R project file and run the city_level_analysis.R file. The file msa_level_analysis.R runs a similar but not identical set of analyses that use the census's metropolitan statistical area designations instead of cities. The data files all have a tab called "source" that contains a hyperlink to where the data were downloaded. A writeup of the results can be seen on my Wordpress site. 
