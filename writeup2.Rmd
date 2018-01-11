@@ -1,0 +1,53 @@
+---
+title: "Capitals and Good Governance"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+require(openxlsx)
+require(dplyr)
+require(stringr)
+require(data.table)
+require(stargazer)
+
+#options(tibble.print_max = Inf)
+
+```
+
+```{r loaddata, echo = FALSE, results = 'asis'}
+source("scripts/city_level_exploratory.R")
+```
+## Introduction
+
+Something I've been wondering for a while is why states that are very close and very similar have such different qualities of state governments. Namely, Minnesota and Iowa have state governments that are generally regarded as competent but Illinois's is, to put it mildly, garbage. 
+
+```{r summary, echo = FALSE}
+city_data %>% group_by(state_name) %>% 
+  summarise(num_cities = n(),
+            capital_rank = max(capital_rank),
+            capital_is_largest = max(is_capital & pop_2016 == max(pop_2016)),
+            has_capital = has_capital[1])
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r knit2wpquery}
+
+# # Tell RWordPress how to set the user name, password, and URL for your WordPress site.
+# options(WordpressLogin = c(user = 'chimera24'),
+#         WordpressURL = 'https://ticktocksaythehandsoftheclock.wordpress.com/xmlrpc.php')
+# 
+# # Tell knitr to create the html code and upload it to your WordPress site
+# knit2wp('writeup.Rmd', title = 'Blog Posting from R Markdown to WordPress',publish = FALSE)
+
+```
