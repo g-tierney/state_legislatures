@@ -31,9 +31,10 @@ vignettes/*.pdf
 
 
 ### subfolders ###
-final_products/*
+#final_products/*
 articles/*
 output/*
 
 ### Mac files ###
 .DS_Store
+.Rproj.user
