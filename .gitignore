@@ -30,9 +30,10 @@ vignettes/*.pdf
 *.knit.md
 
 
-### written product folder
+### subfolders ###
 final_products/*
+articles/*
+output/*
 
-# articles folder
-#articles/*
-#output/*
+### Mac files ###
+.DS_Store
